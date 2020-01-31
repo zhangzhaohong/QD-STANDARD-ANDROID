@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EmptyLayout">
+        <attr name="nodata_layout" format="reference" />
+        <attr name="networkerror_layout" format="reference" />
+        <attr name="loadding_layout" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FLinearLayout">
+        <attr name="bgColor" format="color" />
+        <attr name="strokeColor" format="color" />
+        <attr name="radius" format="dimension" />
+        <attr name="stroke" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FButton">
+        <attr name="btBgColor" format="color" />
+        <attr name="btStrokeColor" format="color" />
+        <attr name="btRadius" format="dimension" />
+        <attr name="btStroke" format="dimension" />
+        <attr name="btselbgColor" format="color" />
+        <attr name="btPressAlpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="ExtendedListView">
+
+    <attr name="scrollBarPanel" format="reference"/>
+
+    <attr name="scrollBarPanelInAnimation" format="reference"/>
+
+    <attr name="scrollBarPanelOutAnimation" format="reference"/>
+
+    </declare-styleable>
+
+    <!--<declare-styleable name="ProgressBarWithPercent">
+        <attr name="progress_current" format="integer" />
+        <attr name="progress_max" format="integer" />
+
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+
+        <attr name="progress_text_offset" format="dimension" />
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>-->
+
+    <declare-styleable name="VerificationCodeView">
+        <attr name="isNetCode" format="boolean"/>
+        <attr name="codeNumber" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="numberProgressBarStyle" format="reference" />
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PieView">
+        <attr name="percentage" format="float" />
+        <attr name="percentage_size" format="integer" />
+        <attr name="inner_pie_padding" format="integer" />
+        <attr name="inner_text_visibility" format="boolean" />
+        <attr name="inner_text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressColor">
+        <!-- 起始颜色-->
+        <attr name="startcolor" format="color" />
+        <!-- 结束颜色-->
+        <attr name="endcolor" format="color" />
+        <!-- 起始角度 -->
+        <attr name="startangle" format="integer" />
+        <!-- 划过的角度-->
+        <attr name="sweepagle" format="integer" />
+        <!-- 圆环宽度 -->
+        <attr name="progresswidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RopeProgressBar">
+        <attr name="ropeMax" format="integer" />
+        <attr name="ropeProgress" format="integer" />
+        <attr name="ropePrimaryColor" format="color" />
+        <attr name="ropeSecondaryColor" format="color" />
+        <attr name="ropeSlack" format="dimension" />
+        <attr name="ropeStrokeWidth" format="dimension" />
+        <attr name="ropeDynamicLayout" format="boolean" />
+    </declare-styleable>
+
+</resources>

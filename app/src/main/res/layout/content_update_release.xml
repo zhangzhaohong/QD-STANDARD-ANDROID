@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="?attr/colorPrimary"
+    tools:context="com.autumn.framework.update.Update_release"
+    tools:showIn="@layout/activity_update_release">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/release_circle_view"
+            android:layout_centerInParent="true"
+            android:layout_weight = "7"
+            android:background="?attr/colorPrimary">
+
+            <com.autumn.framework.View.ScanView
+                android:id="@+id/scanView_release"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:background="?attr/colorPrimary"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="DC"
+                android:textColor="@android:color/white"
+                android:textSize="40sp" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_below="@id/release_circle_view"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/status_Text"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/retry"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/statusText"
+                android:background="@drawable/ysspq"
+                android:visibility="gone"
+                android:text="重试"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/exit"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/retry"
+                android:background="@drawable/ysspq"
+                android:visibility="gone"
+                android:text="退出"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

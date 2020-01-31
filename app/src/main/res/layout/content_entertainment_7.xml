@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:focusableInTouchMode="true"
+	android:orientation="vertical">
+
+	<android.support.v4.widget.NestedScrollView
+		android:id="@+id/hot_music_page"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<com.scwang.smartrefresh.layout.SmartRefreshLayout
+				android:id="@+id/pull_to_refresh_view"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="#444444"
+				app:srlAccentColor="@android:color/white"
+				app:srlEnablePreviewInEditMode="true"
+				app:srlPrimaryColor="#444444">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:background="@android:color/white"
+					android:orientation="vertical">
+
+					<com.youth.banner.Banner
+						android:id="@+id/banner"
+						android:layout_width="1080px"
+						android:layout_height="432px"
+						android:layout_gravity="center|fill"
+						android:clickable="true"
+						android:descendantFocusability="beforeDescendants"
+						android:visibility="gone"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintTop_toTopOf="parent" />
+
+					<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+						android:id="@+id/cardView_1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center_horizontal"
+						android:gravity="center|center_vertical|center_horizontal"
+						android:visibility="gone">
+
+					</android.support.v7.widget.CardView>
+
+					<LinearLayout
+						android:id="@+id/hot_title_music"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+
+						<TextView
+							android:id="@+id/textView4"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="10dp"
+							android:layout_marginTop="10dp"
+							android:layout_marginRight="10dp"
+							android:text="热搜排行榜"
+							android:textSize="15dp"
+							android:textStyle="italic" />
+
+						<include layout="@layout/vertical_divider" />
+					</LinearLayout>
+
+					<RelativeLayout
+						android:id="@+id/Hot_list"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<android.support.v7.widget.RecyclerView
+							android:id="@+id/rvPalette"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent" />
+					</RelativeLayout>
+
+				</LinearLayout>
+
+			</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+		</LinearLayout>
+	</android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

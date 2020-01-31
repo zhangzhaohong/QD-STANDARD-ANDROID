@@ -1,0 +1,1931 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:context="com.autumn.framework.setting.super_setting"
+	tools:showIn="@layout/activity_super_setting">
+
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/cardView_1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_gravity="left"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:gravity="center_vertical|left"
+							android:text="Crash异常处理"
+							android:textColor="@android:color/background_dark"
+							android:textSize="15dp"
+							android:textStyle="bold" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="自动上传Crash异常日志"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton1"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/cardView_2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_gravity="left"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:gravity="center_vertical|left"
+							android:text="一级日志（可能会连续打印日志，占用手机内存）"
+							android:textColor="@android:color/background_dark"
+							android:textSize="15dp"
+							android:textStyle="bold" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="自动保存log日志"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton2"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="允许打印日志（D）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton3"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="允许打印日志（E）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton4"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="允许打印日志（I）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton5"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="允许打印日志（V）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton6"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="允许打印日志（W）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton7"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="允许打印日志（WTF）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton8"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="开启BETA-DEBUG模式（会打印全部日志，并保存在本地，请谨慎使用）"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton9"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/cardView_3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_gravity="left"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:gravity="center_vertical|left"
+							android:text="二级日志（不会保存日志，仅供测试模块所用）"
+							android:textColor="@android:color/background_dark"
+							android:textSize="15dp"
+							android:textStyle="bold" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="开启DEBUG模式"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton10"/>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/cardView_4"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_gravity="left"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:gravity="center_vertical|left"
+							android:text="内存管理"
+							android:textColor="@android:color/background_dark"
+							android:textSize="15dp"
+							android:textStyle="bold" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/dump_manual">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:orientation="horizontal"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:gravity="center_vertical"
+								android:layout_weight="7"
+								android:text="立即手动dump"
+								android:textSize="15dp" />
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:gravity="center_vertical"
+								android:layout_gravity="right"
+								android:layout_weight="2"
+								android:text="dump进行中"
+								android:textSize="15dp"
+								android:visibility="gone"
+								android:id="@+id/dump_doing"/>
+
+						</LinearLayout>
+
+						<ImageView
+							android:id="@+id/dump_now"
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_glide_temp">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:orientation="horizontal"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="7">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:gravity="center_vertical"
+								android:layout_weight="5"
+								android:text="清除Glide缓存"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/glide_temp_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="right|center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_log_file">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="8"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="6"
+								android:gravity="center_vertical"
+								android:text="清除log日志"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/log_file_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_crash_file">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="7"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="5"
+								android:gravity="center_vertical"
+								android:text="清除crash日志"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/crash_file_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_dump_file">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="7"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:gravity="center_vertical"
+								android:layout_weight="5"
+								android:text="清除dump日志"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/dump_file_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_update_file">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="6"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="4"
+								android:gravity="center_vertical"
+								android:text="清除已下载更新包"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/update_file_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_banner_file">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="7"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="4"
+								android:gravity="center_vertical"
+								android:text="清理轮番图缓存"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/banner_file_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/clean_all_file">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="6"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="4"
+								android:gravity="center_vertical"
+								android:text="清除全部缓存数据"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/all_file_size"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0Byte"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/cardView_5"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_gravity="left"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:gravity="center_vertical|left"
+							android:text="个性化"
+							android:textColor="@android:color/background_dark"
+							android:textSize="15dp"
+							android:textStyle="bold" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/change_color">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="10"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="10"
+								android:gravity="center_vertical"
+								android:text="主题色修改"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<android.support.v7.widget.CardView
+				android:id="@+id/cardView_6"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="10dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_gravity="left"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:gravity="center_vertical|left"
+							android:text="其他"
+							android:textColor="@android:color/background_dark"
+							android:textSize="15dp"
+							android:textStyle="bold" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/status_bar_height_refresh">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:gravity="center_vertical"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="7"
+							android:text="状态栏实际高度"
+							android:textSize="15dp" />
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="3"
+							android:gravity="right"
+							android:layout_gravity="right"
+							android:layout_marginRight="10dp"
+							android:orientation="horizontal">
+
+							<TextView
+								android:id="@+id/status_bar_height"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_gravity="center_vertical"
+								android:layout_weight="2"
+								android:gravity="center_vertical|right"
+								android:text="0.0"
+								android:textColor="@android:color/black"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="horizontal"
+						android:id="@+id/x5_status">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:gravity="center_vertical"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="7"
+							android:id="@+id/x5_status_text"
+							android:text="正在初始化X5内核"
+							android:textSize="15dp" />
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="3"
+							android:gravity="right"
+							android:layout_gravity="right"
+							android:layout_marginRight="10dp"
+							android:orientation="horizontal">
+
+							<ProgressBar
+								android:id="@+id/x5_progressBar"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_gravity="center_vertical|center_horizontal"
+								android:layout_margin="5dp" />
+
+						</LinearLayout>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/x5_setting">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:gravity="center_vertical"
+								android:text="x5内核配置"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/core_info">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="6"
+								android:gravity="center_vertical"
+								android:text="内核信息"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/core_name"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal"
+						android:id="@+id/test_webview">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="3"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="center_vertical"
+								android:text="立即测试内核加载自定义页面情况"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/netease_music_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="网易云音乐默认音质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/netease_music_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/tencent_music_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="腾讯音乐默认音质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/tencent_music_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/kugou_music_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="酷狗音乐默认音质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/kugou_music_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/kuwo_music_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="酷我音乐默认音质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/kuwo_music_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/migu_music_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="咪咕音乐默认音质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/migu_music_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/baidu_music_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="百度音乐默认音质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/baidu_music_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/netease_mv_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="网易云音乐MV默认画质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/netease_mv_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/tencent_mv_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="腾讯音乐MV默认画质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/tencent_mv_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/kugou_mv_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="酷狗音乐MV默认画质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/kugou_mv_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/kuwo_mv_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="酷我音乐MV默认画质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/kuwo_mv_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/migu_mv_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="咪咕音乐MV默认画质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/migu_mv_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/baidu_mv_info"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="百度音乐MV默认画质"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/baidu_mv_quality"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/player_play_mode"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="9"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="1"
+								android:gravity="center_vertical"
+								android:text="音乐播放器播放模式"
+								android:textSize="15dp" />
+
+							<TextView
+								android:id="@+id/play_mode"
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="5"
+								android:gravity="right|center_vertical"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_weight="9"
+							android:textSize="15dp"
+							android:text="log内网服务"
+							android:layout_gravity="left"
+							android:gravity="center_vertical|left"
+							android:layout_marginLeft="10dp"/>
+
+						<ToggleButton
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:background="@android:color/transparent"
+							android:button="@drawable/ios7_btn"
+							android:checked="false"
+							android:text=""
+							android:textOff=""
+							android:textOn=""
+							android:id="@+id/supersettingToggleButton11"/>
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/music_setting"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="3"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="center_vertical"
+								android:text="音乐播放器实验室"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"/>
+
+					<LinearLayout
+						android:id="@+id/cut_audio"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="3"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="center_vertical"
+								android:text="音乐剪切实验室"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_weight="3" />
+
+					<LinearLayout
+						android:id="@+id/update_test"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="3"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="center_vertical"
+								android:text="检测更新实验室"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+					<include
+						layout="@layout/vertical_divider"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_weight="3" />
+
+					<LinearLayout
+						android:id="@+id/pic_shower"
+						android:layout_width="match_parent"
+						android:layout_height="50dp"
+						android:orientation="horizontal">
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:layout_marginLeft="10dp"
+							android:layout_weight="3"
+							android:orientation="horizontal">
+
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="match_parent"
+								android:layout_weight="3"
+								android:gravity="center_vertical"
+								android:text="图片显示器实验室"
+								android:textSize="15dp" />
+
+						</LinearLayout>
+
+						<ImageView
+							android:layout_width="@dimen/Setting_resource"
+							android:layout_height="@dimen/Setting_resource"
+							android:layout_gravity="right|center_vertical"
+							android:background="@drawable/setting_1"
+							android:visibility="visible" />
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</android.support.v7.widget.CardView>
+
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="80dp">
+
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:layout_gravity="center|bottom"
+				android:layout_margin="10dp"
+				android:background="@drawable/ysspqt"
+				android:gravity="center_horizontal"
+				android:text="@string/Author_info"
+				android:textColor="@color/colorPrimary"
+				android:textSize="15sp"
+				android:textStyle="bold" />
+
+			<LinearLayout
+				android:id="@+id/lll"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:visibility="gone"
+				android:orientation="horizontal">
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+</android.support.constraint.ConstraintLayout>

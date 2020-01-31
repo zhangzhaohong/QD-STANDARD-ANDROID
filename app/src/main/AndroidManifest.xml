@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.autumn.reptile">
+
+    <!-- 安卓P -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEM"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-feature android:name="android.hardware.nfc.hce"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.webkit.permission.PLUGIN"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+
+    <application
+        android:name=".MyApplication"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:stateNotNeeded="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/IndigoTheme"
+        android:persistent="true"
+        tools:replace="android:icon, android:theme, android:name"
+        android:alwaysRetainTaskState="true"
+        android:hardwareAccelerated="true"
+        android:resizeableActivity="false">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+        <service
+            android:name="com.autumn.framework.entertainment.DouYinDownloader.MyService">
+            <intent-filter >
+                <action android:name="${applicationId}"/>
+            </intent-filter>
+        </service>
+
+        <service android:name="com.autumn.framework.service.DownloadService"/>
+
+        <service android:name="com.autumn.framework.entertainment.music_service.MusicService"
+            android:enabled="true"/>
+
+        <service
+            android:name="com.autumn.framework.X5WebView.tools.X5NetService"
+            android:enabled="true"/>
+
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt" />
+
+        <activity
+            android:name=".Splash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppStartLoadTranslucent">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                    android:host="data.meternity.cn"
+                    android:pathPattern="/.*"
+                    android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.entertainment.music_player.MusicPlayerActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:hardwareAccelerated="true"/>
+
+        <activity
+            android:name="com.autumn.framework.entertainment.activity.Music_list_activity"
+            android:screenOrientation="portrait"
+            android:label="@string/music_list"/>
+
+        <activity
+            android:name="com.autumn.framework.X5WebView.ui.X5WebGameActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+        <activity
+            android:name="com.tencent.smtt.sdk.VideoActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="com.tencent.smtt.tbs.video.PLAY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.autumn.framework.X5WebView.ui.SelfOperationActivity"
+            android:hardwareAccelerated="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/user_tools" />
+
+        <activity
+            android:name="com.autumn.framework.X5WebView.ui.PublicShActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/public_sh_tools" />
+
+        <activity
+            android:name="com.autumn.framework.setting.super_setting"
+            android:label="@string/action_super_settings"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.LoginActivity"
+            android:label="@string/action_login"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.service_detail"
+            android:label="@string/action_service_detail"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.service_not_allowed"
+            android:label="@string/action_service_not_allowed"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.guide.WelcomeGuideActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.Register_success"
+            android:label="@string/action_register_success"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.password_reset"
+            android:label="@string/title_activity_password_reset"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.password_reset_v2"
+            android:label="@string/title_activity_password_reset_v2"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.act_account"
+            android:label="@string/title_activity_act_account"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.beta.beta_application_activity"
+            android:label="@string/title_activity_beta_application"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.beta.beta_helper_activity"
+            android:label="@string/title_activity_beta_helper"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.update.FindUpdateActivity"
+            android:label="@string/action_update"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.update.AppUpdateActivity"
+            android:label="@string/action_update_software"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
+        <activity
+            android:name="com.autumn.framework.user.UserInfoActivity"
+            android:label="@string/user_info"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.update.Update_release"
+            android:label="@string/title_activity_update_release"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.autumn.framework.user.EditPrivateName"
+            android:label="@string/edit_private_name"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="com.autumn.framework.music.MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="com.autumn.framework.music.CutAudioActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="com.autumn.framework.music.activity.SplashActivity"
+            android:theme="@style/StartAppTheme">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity android:name="com.autumn.framework.picEngine.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.autumn.framework.music.activity.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.autumn.framework.music.activity.PlayActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"/>
+        <service android:name="com.autumn.framework.music.MusicService"/>
+
+        <service android:name="com.autumn.framework.service.AssistService"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!-- 【必须】 信鸽receiver广播接收 -->
+        <receiver android:name="com.tencent.android.tpush.XGPushReceiver"
+            android:process=":xg_service_v3" >
+            <intent-filter android:priority="0x7fffffff" >
+                <!-- 【必须】 信鸽SDK的内部广播 -->
+                <action android:name="com.tencent.android.tpush.action.SDK" />
+                <action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
+                <!-- 【必须】 系统广播：开屏和网络切换 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <!-- 【可选】 一些常用的系统广播，增强信鸽service的复活机会，请根据需要选择。当然，你也可以添加APP自定义的一些广播让启动service -->
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 【可选】APP实现的Receiver，用于接收消息透传和操作结果的回调，请根据需要添加 -->
+        <!-- YOUR_PACKAGE_PATH.CustomPushReceiver需要改为自己的Receiver： -->
+        <receiver android:name="com.autumn.framework.receiver.MessageReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <!-- 接收消息透传 -->
+                <action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />
+                <!-- 监听注册、反注册、设置/删除标签、通知被点击等处理结果 -->
+                <action android:name="com.tencent.android.tpush.action.FEEDBACK" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 【注意】 如果被打开的activity是启动模式为SingleTop，SingleTask或SingleInstance，请根据通知的异常自查列表第8点处理-->
+        <activity
+            android:name="com.tencent.android.tpush.XGPushActivity"
+            android:exported="false" >
+            <intent-filter>
+                <!-- 若使用AndroidStudio，请设置android:name="android.intent.action"-->
+                <action android:name="android.intent.action" />
+            </intent-filter>
+        </activity>
+
+        <!-- 【必须】 信鸽service -->
+        <service
+            android:name="com.tencent.android.tpush.service.XGPushServiceV3"
+            android:exported="true"
+            android:persistent="true"
+            android:process=":xg_service_v3" />
+
+
+        <!-- 【必须】 提高service的存活率 -->
+        <service
+            android:name="com.tencent.android.tpush.rpc.XGRemoteService"
+            android:exported="true">
+            <intent-filter>
+                <!-- 【必须】 请修改为当前APP包名 .PUSH_ACTION, 如demo的包名为：com.qq.xgdemo -->
+                <action android:name="com.autumn.reptile.PUSH_ACTION" />
+            </intent-filter>
+        </service>
+
+
+        <!-- 【必须】 【注意】authorities修改为 包名.AUTH_XGPUSH, 如demo的包名为：com.qq.xgdemo-->
+        <provider
+            android:name="com.tencent.android.tpush.XGPushProvider"
+            android:authorities="com.autumn.reptile.AUTH_XGPUSH"
+            android:exported="true"/>
+
+        <!-- 【必须】 【注意】authorities修改为 包名.TPUSH_PROVIDER, 如demo的包名为：com.qq.xgdemo-->
+        <provider
+            android:name="com.tencent.android.tpush.SettingsContentProvider"
+            android:authorities="com.autumn.reptile.TPUSH_PROVIDER"
+            android:exported="false" />
+
+        <!-- 【必须】 【注意】authorities修改为 包名.TENCENT.MID.V3, 如demo的包名为：com.qq.xgdemo-->
+        <provider
+            android:name="com.tencent.mid.api.MidProvider"
+            android:authorities="com.autumn.reptile.TENCENT.MID.V3"
+            android:exported="true" >
+        </provider>
+
+
+
+        <!-- 【必须】 请将YOUR_ACCESS_ID修改为APP的AccessId，“21”开头的10位数字，中间没空格 -->
+        <meta-data
+            android:name="XG_V2_ACCESS_ID"
+            android:value="2100314253" />
+        <!-- 【必须】 请将YOUR_ACCESS_KEY修改为APP的AccessKey，“A”开头的12位字符串，中间没空格 -->
+        <meta-data
+            android:name="XG_V2_ACCESS_KEY"
+            android:value="AMR2626L3MYQ" />
+
+    </application>
+
+    <!-- 【必须】 信鸽SDK所需权限   -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 【常用】 信鸽SDK所需权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- 【可选】 信鸽SDK所需权限 -->
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+</manifest>

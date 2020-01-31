@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:text="@string/title_activity_beta_helper"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="1.同意内测全部条款：请先认真阅读内测须知，并确认依据阅读以上规定，并会遵守全部规定（如下图）。"
+                        android:textSize="15dp" />
+
+                    <include layout="@layout/vertical_divider" />
+
+                    <ImageView
+                        android:id="@+id/beta_helper_1"
+                        android:layout_width="250dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="2.获取内测激活码：请在完成第一步以后，点击下方立即申请按钮，请耐心等待直至出现提示语或如下图对话框，如若未出现申请成功，则您无法参加本期内测，原因见提示语。"
+                        android:textSize="15dp" />
+
+                    <include layout="@layout/vertical_divider" />
+
+                    <ImageView
+                        android:id="@+id/beta_helper_2"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="3.自助授权获取新版本-1：请前往自助平台，在自助下单区域，点击自助授权，并在输入卡密的位置粘贴刚才获取到的激活码（获取到的激活码会自动复制到剪贴板）如下图。"
+                        android:textSize="15dp" />
+
+                    <include layout="@layout/vertical_divider" />
+
+                    <ImageView
+                        android:id="@+id/beta_helper_3"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="3.自助授权获取新版本-2：输入完激活码，请点击检查卡密，并在用户账号位置输入您登陆使用的账号（8位及以上数字），输入以后，请点击立即参加，至此，如若没有报错，您已经成功参加了这一期内测，您可以立即前往软件内检测更新页面检测新版本。"
+                        android:textSize="15dp" />
+
+                    <include layout="@layout/vertical_divider" />
+
+                    <ImageView
+                        android:id="@+id/beta_helper_4"
+                        android:layout_width="250dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:scaleType="fitXY" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="特别提醒：当您参加了内测活动以后，您无法在本beta版本检测到其他正式版，直至beta活动结束，在其他正式版仍然可正常检测到新版本，且在内测活动进行中，如若可以检测到log内测版本，同时也可以检测到正式版本，则内测版本将优先于正式版更新，即您无法检测到正式版本更新。"
+                        android:textSize="15dp"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

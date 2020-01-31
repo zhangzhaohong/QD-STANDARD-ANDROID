@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="用户信息"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <include layout="@layout/vertical_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="用户名" />
+
+                <TextView
+                    android:id="@+id/register_success_TextView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="10000000" />
+
+            </LinearLayout>
+
+            <include layout="@layout/vertical_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="密码" />
+
+                <TextView
+                    android:id="@+id/register_success_TextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="10000000" />
+
+            </LinearLayout>
+
+            <include layout="@layout/vertical_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="昵称(不可用来登录)" />
+
+                <TextView
+                    android:id="@+id/register_success_TextView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="test" />
+
+            </LinearLayout>
+
+            <include layout="@layout/vertical_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="生日" />
+
+                <TextView
+                    android:id="@+id/register_success_TextView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="2000-01-01" />
+
+            </LinearLayout>
+
+            <include layout="@layout/vertical_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="邮箱" />
+
+                <TextView
+                    android:id="@+id/register_success_TextView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="10000000@qq.com" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/keyboard_height"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal" />
+
+            <Button
+                android:id="@+id/btn_register_complete"
+                android:layout_width="160dp"
+                android:layout_height="42dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/button_shape"
+                android:text="完成"
+                android:textColor="#ce102c"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.v4.widget.NestedScrollView>

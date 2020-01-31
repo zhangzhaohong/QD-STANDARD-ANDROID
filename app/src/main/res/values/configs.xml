@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_package_name">com.autumn.reptile</string>
+    
+	<string name="app_version">8.0.0.101</string>
+	
+	<string name="app_build">80010103</string>
+
+	<string name="app_code">SP03Patch19</string>
+	<!--SP02Patch90-->
+	<string name="app_code_main">SP03</string>
+
+	<string name="app_software_version">奇点 8.0.0.101 (SP03Patch19)</string>
+	
+	<string name="app_group">903292890</string>
+
+	<string name="app_name_debug">V8.0.0.100_debug_CheckIn_20190830_22-56-00_26632DD_build80010103-R17</string>
+
+	<string name="app_key">d9dDP+vuQSe8p++8nmVXB/ckX7WAvo1vh8B/ESFsxW1h53rkft7C6W4i1VBOBF6Y</string>
+
+	<string name="app_beta_key">iwGVW+f4GSn+fD40nas2sUsMjr7xbiO0EHFAuDjBIYE=</string>
+
+	<string name="app_debug_key">2bH9BKrkEum4JG+Qv4CcNVh0N6RvTblzGlmAlqyMm5Y=</string>
+
+	<string name="service_content_key">tN4clSY2fTwWs89PxF3h15s//3eewfs/Y6jRAkvC8azBtiCl5cN9sVx1a9Du0oYL</string>
+
+	<string name="service_not_allowed_key">CZFGSf6xSJq/yQgEAwOP/Zs//3eewfs/Y6jRAkvC8azBtiCl5cN9sVx1a9Du0oYL</string>
+
+	<string name="beta_content_key">N4C0hZuB0oGnx4SneQUksZs//3eewfs/Y6jRAkvC8azBtiCl5cN9sVx1a9Du0oYL</string>
+
+	<string name="entertainment_key_1">YZqIiuHcygZxINJ+JffI04aQoG4MslfqxCDP3HagB1lYdDekb025cxpZgJasjJuW</string>
+
+	<string name="entertainment_key_2">KYb2LYaYHw918dNl0luyHEU8U662+u5UEDomPEedXHBYdDekb025cxpZgJasjJuW</string>
+
+	<string name="entertainment_key_3">Wuwf/9DQhBTl2t2+QGLp9aslEB1DhDhMcFWuCCqDphSKTiVgOTrTD/mb+QElA92DrDF8vb2flZZgfM0jv9D2sw==</string>
+
+	<string name="entertainment_key_4">M26GhcmqFy2+nNxFjSlmYHPfiE/Zgn5S8UB3mFI1MyRYdDekb025cxpZgJasjJuW</string>
+
+	<string name="entertainment_key_5">tXHxY0hz63ZCZ5ROLxoo6lbFPqydrqvXb0z2i0QGB/LxeMItwyqrSHPBewLsQwpBEHUD4egh2BfjvQn/c5jTtQ==</string>
+
+	<string name="entertainment_key_6">np7Ch+m0PakTr70bEe7fPjWCAraTO1EetjlRmJzQAgB+MAZCI+kPmV1F7u+h7mvcoHjP27Dpyk8UmM/FndexoQ==</string>
+
+	<string name="entertainment_key_7">2XqY27nI6CI6AN4F7juA3sX54w+71XyS297Yq4v1HmdDzcPuztTTRVOII/UL4EyKKHKfg2GbydgzWWJ2933roA==</string>
+
+	<string name="entertainment_key_8">82sC/uzcVrqpy+niXGBZsl2ohlq4YoVWQr2ONF/Hls5+MAZCI+kPmV1F7u+h7mvcoHjP27Dpyk8UmM/FndexoQ==</string>
+
+	<string name="main_banner_key">sLor3IcRDUuZAF8rEwJDXh44pWl4u9WdCars6cAwfc6CFFWpoyTgNNqGFb9ndRBM</string>
+
+	<string name="sign_checker_key">oZe/kyFsuVFrbpY1y+JekDjZGytPTr7w9NbbYyiP0V3BtiCl5cN9sVx1a9Du0oYL</string>
+
+	<string name="files_path">/com.autumn.reptile</string>
+
+	<string name="Splash_time">5</string>
+
+	<string name="finder_app_path">/HW_APP_Finder</string>
+
+	<string name="finder_system_path">/HW_MOBILE_SYSTEM_Finder</string>
+
+	<string name="finder_wear_path">/HW_WEAR_Finder</string>
+
+	<string name="logs_path">/data</string>
+
+	<string name="update_path">/download</string>
+
+	<string name="hw_finder">/HW_Finder</string>
+
+	<string name="server_url_test">http://zhang0814.w3.luyouxia.net/</string>
+
+	<string name="server_url">https://data.meternity.cn/</string>
+
+	<string name="tencent_app_id">101468143</string>
+
+	<string name="bugly_app_id">99ea243c58</string>
+
+    <string name="Author_info">©2001-2019 MEternity Inc.</string>
+
+</resources>

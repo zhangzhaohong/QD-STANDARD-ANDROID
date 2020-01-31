@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_my_thread"
+            android:title="资料卡" />
+        <item
+            android:id="@+id/nav_beta_application"
+            android:icon="@drawable/ic_tab_1_3"
+            android:title="beta活动报名" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="自助平台" />
+        <item
+            android:id="@+id/nav_update"
+            android:icon="@drawable/theme_toolbar_btn_cleardata_normal0"
+            android:title="检测更新" />
+    </group>
+
+    <item android:title="beta">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_settings_black"
+                android:title="设置" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="快捷问题反馈" />
+        </menu>
+    </item>
+    <item android:title="account">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="?attr/actionModeCloseDrawable"
+                android:title="注销 " />
+        </menu>
+    </item>
+
+</menu>

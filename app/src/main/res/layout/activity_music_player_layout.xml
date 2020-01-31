@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_gray_bg"/>
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/include_common_text_title_musicplayer" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title"
+        android:orientation="vertical">
+
+        <!--ViewPager,这个空间上面可以放其他空间，ViewPager的范围在这个控件以下-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="10">
+
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/viewGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ly_action"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_nowtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/color_white"
+                android:textSize="12dp" />
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxHeight="2.0dip"
+                android:minHeight="2.0dip"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_gray_drawable"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <TextView
+                android:id="@+id/tv_totaltime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/color_white"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/music_download"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/download_white" />
+
+            <ImageView
+                android:id="@+id/iv_pre"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/pre_selector" />
+
+            <ImageView
+                android:id="@+id/iv_status"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:src="@drawable/play_selector" />
+
+            <ProgressBar
+                android:id="@+id/pb_load"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/play_load_drawable"
+                android:indeterminateOnly="true"
+                android:padding="5dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/next_selector" />
+
+            <ImageView
+                android:id="@+id/music_change_quality"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/change_white" />
+        </LinearLayout>
+
+
+        <!--这里是下方的圆点-->
+
+    </LinearLayout>
+
+</RelativeLayout>

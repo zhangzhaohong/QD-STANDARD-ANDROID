@@ -1,0 +1,462 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'bugly'
+
+apply from: 'and_res_guard.gradle'
+apply from: 'tinker-support.gradle'
+
+def bakPath(){
+    return file("${buildDir}/bakApk/")
+}
+
+/**
+ * 此处填写每次构建生成的基准包目录
+ */
+def baseApkDir(){
+    def versionPropsFile = file("../version.properties")
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        return versionProps['BASE_PATH_NAME']
+    } else {
+        throw new GradleException("Could not read gradle.properties")
+    }
+    //return "resguard-0624-23-21-31"
+}
+
+def detailedBuildTime() {
+    return new Date().format("MMdd-HH-mm-ss", TimeZone.getTimeZone("GMT+8"))
+}
+
+def appName(){
+    return "${project.getName()}"
+}
+
+//获取版本号
+def verCode() {
+    def versionPropsFile = file("../version.properties")
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        def int verCode = versionProps['VERSION_CODE'].toInteger()
+        return verCode;
+    } else {
+        throw new GradleException("Could not read gradle.properties")
+    }
+}
+
+
+//获取版本名
+def verName() {
+    def versionPropsFile = file("../version.properties")
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        return versionProps['VERSION_NAME']
+    } else {
+        throw new GradleException("Could not read gradle.properties")
+    }
+}
+
+def currentTime = getCurrentTime()
+
+def getCurrentTime() {
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    return df.format(Calendar.getInstance(Locale.CHINA).getTimeInMillis())
+}
+
+bugly {
+    appId = '99ea243c58' // 注册时分配的App ID
+    appKey = '6b63a81e-439f-404b-9fa7-e7f11f95cb61' // 注册时分配的App Key
+}
+
+// 添加插件
+//apply plugin: 'com.mob.sdk'
+
+// 在MobSDK的扩展中注册MobIM的相关信息
+/*MobSDK {
+    appKey "2858805be4168"
+    appSecret "c868bce65729f11effa078b0926a3785"
+
+    MobIM {}
+}*/
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode verCode()
+        versionName verName()
+        //versionCode 80010102
+        //versionName "8.0.0.101(SP02Patch56)"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        buildConfigField("String", "App_Build_Time", "\"${currentTime}\"")
+
+        ndk {
+            // 设置支持的SO库架构
+            //abiFilters 'armeabi', 'armeabi-v7a', 'x86_64', 'arm64-v8a', 'x86' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+
+        manifestPlaceholders = [
+
+                XG_ACCESS_ID:"2100314253",
+                XG_ACCESS_KEY : "AMR2626L3MYQ",
+        ]
+
+    }
+    dexOptions {
+        jumboMode = true
+        //javaMaxHeapSize "4g"
+    }
+
+    // 签名配置
+    signingConfigs {
+        release {
+            try {
+                storeFile file("./keystore/release.jks")
+                storePassword "64752867"
+                keyAlias "autumn"
+                keyPassword "64752867"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+
+        debug {
+            try {
+                storeFile file("./keystore/debug.jks")
+                storePassword "64752867"
+                keyAlias "autumn"
+                keyPassword "64752867"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+    }
+    buildTypes {
+        release {
+            //multiDexEnabled true
+            minifyEnabled true
+            //移除无用的资源文件
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable false
+            jniDebuggable false
+            //minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            signingConfig signingConfigs.release
+        }
+        debug {
+            //multiDexEnabled true
+            minifyEnabled true
+            //移除无用的资源文件
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable true
+            jniDebuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            signingConfig signingConfigs.release
+        }
+
+        /**
+         * bak apk and mapping
+         */
+        android.applicationVariants.all { variant ->
+            /**
+             * task type, you want to bak
+             */
+            def taskName = variant.name
+
+
+            tasks.all {
+
+                if (variant.buildType.name == 'release') {
+
+                    def andResDir = "${buildDir}/outputs/apk/${taskName}/AndResGuard_${project.getName()}-${taskName}";
+
+                    if ("tinkerPatch${taskName.capitalize()}".equalsIgnoreCase(it.name)) {
+
+                        // find resguard task
+                        def resguardTask
+                        tasks.all {
+                            if (it.name.startsWith("resguard${taskName.capitalize()}")) {
+                                resguardTask = it
+                            }
+                        }
+                        it.doFirst({
+                            // change build apk path
+                            it.buildApkPath = "${andResDir}/${project.getName()}-${taskName}_7zip_aligned_signed.apk"
+                        })
+
+                        // change task dependence to resguard task
+                        it.dependsOn resguardTask
+
+                    }
+
+                    if ("resguard${taskName.capitalize()}".equalsIgnoreCase(it.name)) {
+                        it.doLast {
+                            copy {
+                                def outDir = file("${bakPath()}/resguard-${detailedBuildTime()}")
+
+                                from "${andResDir}/${project.getName()}-${taskName}_aligned_signed.apk"
+                                into outDir
+                                rename { String fileName ->
+                                    fileName.replace("${project.getName()}-${taskName}_aligned_signed.apk", "${appName()}.apk")
+                                }
+
+                                from "${buildDir}/outputs/mapping/${taskName}/mapping.txt"
+                                into outDir
+                                rename { String fileName ->
+                                    fileName.replace("mapping.txt", "${appName()}-mapping.txt")
+                                }
+
+                                from "${buildDir}/intermediates/symbols/${taskName}/R.txt"
+                                into outDir
+                                rename { String fileName ->
+                                    fileName.replace("R.txt", "${appName()}-R.txt")
+                                }
+
+                                from "${andResDir}/resource_mapping_${project.getName()}-release.txt"
+                                into outDir
+                                rename { String fileName ->
+                                    fileName.replace("resource_mapping_${project.getName()}-release.txt", "${appName()}-resource_mapping.txt")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        //incremental = false
+    }
+
+    /*sourceSets {
+        main {
+            res.srcDirs = ['src/main/res']
+            //jniLibs.srcDirs = ['libs']
+        }
+    }*/
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:palette-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.1'
+    implementation 'com.github.addappcn:android-pickers:1.0.1'
+    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'com.alibaba:fastjson:1.2.51'
+    implementation 'com.alibaba:fastjson:1.2.51.android'
+    //implementation 'com.alibaba:fastjson:1.1.56.android'
+    implementation 'com.liyi.sutils:sutils:2.0.6'
+    implementation 'com.github.lazylibrary:lazylibrary:1.0.2'
+    implementation 'com.liulishuo.filedownloader:library:1.7.6'
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+    implementation 'com.tracup:library:1.0.7'
+    //implementation 'com.tencent.bugly:crashreport_upgrade:1.3.5' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    //implementation 'com.tencent.bugly:nativecrashreport:3.3.1' //其中latest.release指代最新Bugly NDK版本号，也可以指定
+    // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    //implementation 'com.tencent.tinker:tinker-android-lib:1.9.9'
+    implementation 'com.android.support:multidex:1.0.3'
+    //implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    //bugly
+    //注释掉原有bugly的仓库
+    
+    //compile 'com.tencent.bugly:crashreport:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.3.4
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.1'
+    // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    implementation 'com.tencent.tinker:tinker-android-lib:1.9.13.2'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.1' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+    //implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    //implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    //implementation 'com.tencent.bugly:nativecrashreport:3.3.1'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    //implementation 'com.tencent.bugly:crashreport_upgrade:1.3.5'
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+    // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    //implementation 'com.tencent.tinker:tinker-android-lib:1.9.8'
+
+    //X5BROWSER
+    //implementation 'com.github.iamlocky:X5Browser:1.0.1'
+
+    //内存泄漏
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3' //当使用support库时添加
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+
+    //MusicPlayer
+    implementation 'ywl.ywl5320:libmusic:1.2.6'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    //implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    //annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
+    implementation 'jp.wasabeef:glide-transformations:3.0.1'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    //tencent gt
+    //implementation 'com.tencent.wstt.gt:gt-sdk:3.1.0'
+
+    //X5
+    api 'com.tencent.tbs.tbssdk:sdk:43697'
+
+    //QMUI
+    implementation 'com.qmuiteam:qmui:1.4.0'
+
+    //update-app
+    implementation 'com.qianwen:update-app:3.5.2'
+    implementation 'com.qianwen:okhttp-utils:3.8.0'
+    implementation 'com.lzy.net:okgo:3.0.4'
+
+    //BigImageViewPager
+    implementation 'com.github.SherlockGougou:BigImageViewPager:v4_4.1.0'
+    // matisse
+    implementation(name: 'matisse-release', ext: 'aar') {
+        exclude group: 'com.github.bumptech.glide'
+    }
+
+    //fastandrutils
+    //implementation 'fastandrutils-1.0.7.aar'
+    //implementation (name: 'fastandrutils-1.0.7', ext: 'aar')
+    implementation project(path: ':fastandrutils')
+    //implementation 'cn.hotapk:fastandrutils:latest.release'
+
+    //信鸽3.2.6 版本
+    //完整的信鸽依赖四个都必须有，如果发生依赖冲突请根据对应的依赖版本号选择高版本的依赖。（使用jcenter自动接入请确认libs中没有信鸽的相关jar包）
+
+    //信鸽jar
+    implementation 'com.tencent.xinge:xinge:3.2.6-release'
+    //jg包
+    implementation'com.tencent.jg:jg:1.1'
+    //wup包
+    implementation 'com.tencent.wup:wup:1.0.0.E-release'
+    //mid包
+    implementation 'com.tencent.mid:mid:4.0.6-release'
+
+    //轮播依赖
+    implementation'com.youth.banner:banner:1.4.10'
+    //Glide框架
+    implementation "com.github.bumptech.glide:glide:4.8.0"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
+
+    //implementation 'com.github.arcadefire:nice-spinner:1.3.1'
+
+    //implementation 'com.android.support:appcompat-v7:28.0.0'
+    //implementation 'com.android.support:design:28.0.0'
+    //implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+
+    //RxJava和RxAndroid 用来做线程切换的
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
+
+    //implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'org.conscrypt:conscrypt-openjdk-uber:1.1.3'
+
+    //权限申请
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+
+    //lrc
+    // "latestVersion"改为文首徽章后对应的数值
+    implementation 'me.wcy:lrcview:2.0.1'
+    //implementation project(path: ':lrcview')
+
+    implementation project(path: ':CircleProgress')
+    implementation project(path: ':CircleProgressBar')
+    implementation project(path: ':StatusBarCompat')
+    implementation project(path: ':CircleRefresh')
+    implementation project(path: ':MultiThreadDownload')
+
+    //MVCHelper核心类库
+    implementation 'com.shizhefei:MVCHelper-Library:1.3.1'
+    //里面有使用recyclerview，所以需要导入recyclerview
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    //里面包含一个MVCCoolHelper 是适配这个控件的 MVCHelper
+    implementation 'com.shizhefei:MVCHelper-CoolRefresh:1.3.1'
+    implementation 'com.shizhefei:CoolRefreshView:1.0.1'
+    //里面包含一个MVCPullrefshHelper 是适配这个控件的 MVCHelper
+    implementation 'com.shizhefei:MVCHelper-Pullrefresh:1.3.1'
+    //由于没有找到gradle排至，我自己把它上传到jcenter上
+    implementation 'com.shizhefei:pulltorefresh:1.0.1'
+    //里面包含一个MVCUltraHelper 是适配这个控件的 MVCHelper
+    implementation 'com.shizhefei:MVCHelper-UltraRefresh:1.3.1'
+    //这里6月29号目前最新的，要实时关注新版本去秋大的网站上去看
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    //里面包含一个MVCSwipeRefreshHelper 是适配这个控件的 MVCHelper
+    implementation 'com.shizhefei:MVCHelper-SwipeRefresh:1.3.1'
+    //MVCHelper的测试用例，继承ABSTestCaseFragment实现List getTestCaseDatas()方法
+    implementation 'com.shizhefei:MVCHelper-TestCase:1.3.1'
+    //里面用到了gson
+    implementation 'com.google.code.gson:gson:2.8.2'
+    //MVCHelper的 OKHttp的简单封装
+    implementation 'com.shizhefei:MVCHelper-OkHttp:1.3.1'
+    //里面用到了okhttp3
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okio:okio:2.2.2'
+    //compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    //MVCHelper的 Task操作集合
+    implementation 'com.shizhefei:MVCHelper-Tasks:1.3.1'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                //这里写你想统一的版本是多少，前提是你sdk里有
+                details.useVersion '28.0.0'
+            }
+        }
+    }
+
+    // 依赖插件脚本
+    //apply from: 'tinker-support.gradle'
+
+}

@@ -1,0 +1,14 @@
+include ':app'
+
+include ':CircleProgress'
+include ':CircleProgressBar'
+include ':StatusBarCompat'
+include ':CircleRefresh'
+include ':MultiThreadDownload'
+include ':fastandrutils'
+project(':fastandrutils').projectDir = new File('libs/fastandrutils')
+project(':MultiThreadDownload').projectDir = new File('libs/MultiThreadDownload')
+project(':CircleRefresh').projectDir = new File('libs/CircleRefresh')
+project(':StatusBarCompat').projectDir = new File('libs/StatusBarCompat')
+project(':CircleProgressBar').projectDir = new File('libs/CircleProgressBar')
+project(':CircleProgress').projectDir = new File('libs/CircleProgress')

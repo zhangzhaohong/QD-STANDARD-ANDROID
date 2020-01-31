@@ -1,0 +1,12 @@
+com.autumn.circlerefresh.AnimationView
+com.autumn.circlerefresh.AnimationView$1
+com.autumn.circlerefresh.AnimationView$AnimatorStatus
+com.autumn.circlerefresh.AnimationView$OnViewAniDone
+com.autumn.circlerefresh.BuildConfig
+com.autumn.circlerefresh.CircleRefreshLayout
+com.autumn.circlerefresh.CircleRefreshLayout$1
+com.autumn.circlerefresh.CircleRefreshLayout$2
+com.autumn.circlerefresh.CircleRefreshLayout$3
+com.autumn.circlerefresh.CircleRefreshLayout$4
+com.autumn.circlerefresh.CircleRefreshLayout$5
+com.autumn.circlerefresh.CircleRefreshLayout$OnCircleRefreshListener

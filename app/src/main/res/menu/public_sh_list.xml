@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/public_sh_1"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_1"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_2"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_2"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_road"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_road"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_road_water"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_road_water"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_traffic_card"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_traffic_card"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_weather"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_weather"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_weather_quality"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_weather_quality"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_plane"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_plane"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_flight"
+        android:orderInCategory="100"
+        android:title="@string/public_flight"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/flight_live"
+        android:orderInCategory="100"
+        android:title="@string/flight_live"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/tencent_map"
+        android:orderInCategory="100"
+        android:title="@string/tencent_map"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/typhoon_map_ontime"
+        android:orderInCategory="100"
+        android:title="@string/typhoon_map"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_community"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_community"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_school"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_school"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_restaurant"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_restaurant"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/public_sh_hospital"
+        android:orderInCategory="100"
+        android:title="@string/public_sh_hospital"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.EditPrivateName">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/input_private_name"
+        android:orientation="vertical">
+
+        <com.autumn.framework.View.ClearEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入新昵称"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/et_content"
+            android:inputType="text"
+            android:maxLines="2"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/tv_num"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/user_edit_private_name"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/input_private_name"
+        android:background="@drawable/ysspq"
+        android:text="确认修改"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/user_cancel_edit_private_name"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@id/user_edit_private_name"
+        android:background="@drawable/ysspq"
+        android:text="取消"
+        android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
